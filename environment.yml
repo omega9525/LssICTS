@@ -3,9 +3,9 @@ channels:
   - conda-forge
 dependencies:
   - python
-  - numpy
+  - numpy==1.13.1
   - pip:
-    - pandas
-    - matplotlib
-    - fitsio
-    - Cython
+    - pandas==0.20.3
+    - matplotlib==2.0.2
+    - fitsio==0.9.11
+    - Cython==0.26
