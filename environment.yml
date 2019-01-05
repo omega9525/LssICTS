@@ -4,8 +4,8 @@ channels:
 dependencies:
   - python
   - numpy
+  - multiprocessing
   - pip:
     - pandas
     - matplotlib
     - fitsio
-    - multiprocessing
