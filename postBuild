@@ -1,4 +1,5 @@
 git clone https://gitlab.com/shadaba/CorrelationFunction.git
 cd CorrelationFunction
 python setup.py clean
+rm calc.c
 python setup.py build_ext --inplace
