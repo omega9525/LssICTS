@@ -1,0 +1,8 @@
+scp -r data cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
+scp -r Tutorial cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
+scp  README.md cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
+scp  environment.yml cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
+scp -r images cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
+scp -r tmp cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
+scp  postBuild cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
+scp  runtime.txt cosmology201901@moana.icts.res.in:/home/cosmology201901/lss-handson/.
