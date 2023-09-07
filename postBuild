@@ -1,3 +1,14 @@
+python3 -m venv lss
+source lss/bin/activate
+pip install numpy==1.20.1
+pip install matplotlib==3.3.4
+pip install pandas==1.2.4
+pip install fitsio==1.1.7
+pip install Cython==0.29.23
+pip install joblib==1.0.1
+pip install scipy==1.6.2
+pip install ipykernel
+python -m ipykernel install --user --name="lss" --display-name="lss"
 git clone https://gitlab.com/shadaba/CorrelationFunction.git
 cd CorrelationFunction
 python setup.py clean
