@@ -1,0 +1,8 @@
+can not remove calc.c
+
+find and replace
+tutorial 1 and 2---> np.int --> np.int64
+
+Minor bug in 
+CorrelationFunction/General_FITS_selection.py file
+
