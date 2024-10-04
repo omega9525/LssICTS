@@ -45,7 +45,7 @@ conda list -n lss
 conda list
 
 ------------------------------------------------------------------------------
-2 - Clone the current repository and do - 
+2 - Clone the current repository and do:
 	* cd lss-handson
 	* bash build_corr
 ------------------------------------------------------------------------------
