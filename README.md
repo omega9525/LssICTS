@@ -46,8 +46,8 @@ conda list
 
 ------------------------------------------------------------------------------
 2 - Clone the current repository and do:
-	* cd lss-handson
-	* bash build_corr
+* cd lss-handson
+* bash build_corr
 ------------------------------------------------------------------------------
 
 Some useful info:
