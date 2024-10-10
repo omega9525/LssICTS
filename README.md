@@ -13,36 +13,38 @@ Some useful info:
 
 Update conda to latest if your conda version is too old. (You may skip this step if you already have a reasonably upto date working anaconda environment.)
 
-* Check conda version (update anything less than version 23)
-conda -V
+* Check conda version (update anything less than version 23):
+  * conda -V
 
 If it's not updating and keeps asking you to update conda, then it might be simpler to uninstall conda and then install newest conda version from source file.
 
-* To install from scratch:
-        - go to https://docs.anaconda.com/anaconda/install
-        - choose linux or whichever applies
-        - then follow the instructions there
+
+* To install Anaconda from scratch:
+  * go to https://docs.anaconda.com/anaconda/install
+  * choose linux or whichever applies
+  * then follow the instructions there
 
 * Work with conda-forge as default library right from the beginning:
-Check defaults : conda config --show-sources
-show channels : conda config --show channels
+  * Check defaults : conda config --show-sources
+  * show channels : conda config --show channels
 
-* To set conda-forge as the highest priority channel or default channel for a particular environment, first activate that environment and then do the following -
-conda config --env --add channels conda-forge
-This is to make sure that we only install compatiable versions of all the required packages.
+* To set conda-forge as the highest priority channel or default channel for a particular environment, first activate that environment and then do the following:
+  * conda config --env --add channels conda-forge
 
-* To find some useful conda commands (apart from internet search)
-conda --help
-* Example given, to understand how to use the `search` command
-conda search -h
-* Get the location of your created environments
-conda info --envs
-conda env list
-* List all the packages in your environment by specifying the name of the env
-conda list -h
-conda list -n lss
-* Or first actiavte the env and then just say
-conda list
+  This is to make sure that we only install compatiable   versions of all the required packages.
+
+* To find some useful conda commands (apart from internet search):
+  * conda --help
+* Example given, to understand how to use the `search` command:
+  * conda search -h
+* Get the location of your created environments:
+  * conda info --envs
+  * conda env list
+* List all the packages in your environment by specifying the name of the env:
+  * conda list -h
+  * conda list -n lss
+  * Or first actiavte the env and then just say:
+    * conda list
 
 ------------------------------------------------------------------------------
 2 - Clone the current repository and do:
@@ -59,12 +61,12 @@ These required packages are listed as dependencies in environment.yml file in th
 Running `bash build_corr` does the followings:
   - Installs an anaconda environment `lss` with all the dependencies listed in environment.yml (this will complain if you already have a conda env with the name `lss`)
   - Installs `CorrelationFunction` dependency in `lss` env from https://gitlab.com/shadaba/CorrelationFunction.git
-
+---
 Now you should have a working anaconda env in which you can run the tutorial jupyter notebooks.
-In order to activate the anaconda env, do this in your shell/terminal:
-conda activate lss
+* In order to activate the anaconda env, do this in your shell/terminal:
+  * conda activate lss
 
-The above command takes you into the environment, finally you have to launch the jupyter notebook by doing -
-jupyter notebook
+* The above command takes you into the environment, finally you have to launch the jupyter notebook by doing:
+  * jupyter notebook
 
 You can also directly access these notebook online with interactive by clicking on the binder link above.
