@@ -1,0 +1,16 @@
+#! /usr/bin/bash
+
+eval "$(conda shell.bash hook)"
+conda config --env --add channels conda-forge
+conda env create -f environment.yml
+conda init
+
+conda activate lss
+echo "Current env name:"
+echo -e "`conda env list|grep '*'`\n"
+
+git clone https://gitlab.com/shadaba/CorrelationFunction.git
+cd CorrelationFunction
+python setup.py clean
+\rm calc.c
+python setup.py build_ext --inplace
