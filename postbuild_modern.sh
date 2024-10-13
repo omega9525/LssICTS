@@ -23,7 +23,7 @@ if ! command_exists conda; then
 fi
 
 # Create and activate the environment
-ENV_NAME="lss_v1"
+ENV_NAME="lss"
 PYTHON_VERSION="3.8.8"
 
 if ! conda env list | grep -q "$ENV_NAME"; then
@@ -39,12 +39,20 @@ conda activate "$ENV_NAME"
 
 # Install packages
 packages=(
-    "ipykernel"
-    "numpy"
+    "boost"
     "cython"
+    "fitsio"
+    "gsl"
+    "numpy"
     "matplotlib"
     "joblib"
     "pandas"
+    "scipy"
+    "pip"
+    "git"
+    "ipython"
+    "jupyter"
+    "ipykernel"
 )
 
 for package in "${packages[@]}"; do
