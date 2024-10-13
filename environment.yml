@@ -1,12 +1,19 @@
-name: example-environment
+name: lss
 channels:
   - conda-forge
 dependencies:
   - python
-  - numpy==1.13.1
-  - pip:
-    - pandas==0.20.3
-    - matplotlib==2.0.2
-    - fitsio==0.9.11
-    - Cython==0.26
-    - scipy
+  - boost
+  - cython
+  - fitsio
+  - gcc
+  - gsl
+  - matplotlib
+  - numpy
+  - pandas
+  - pip
+  - scipy
+  - git
+  - ipython
+  - jupyter
+  - joblib
