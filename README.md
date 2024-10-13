@@ -50,7 +50,8 @@ If it's not updating and keeps asking you to update conda, then it might be simp
 2 - Clone the current repository and do:
 ---
 * cd lss-handson
-* bash build_corr
+* chmod +x postbuild_modern.sh 
+* ./postbuild_modern.sh 
 ---
 
 Some useful info:
@@ -58,7 +59,7 @@ Some useful info:
 Once you have successfully installed conda, next we create a conda environment that contains all the required packages needed for the tutorials.
 These required packages are listed as dependencies in environment.yml file in this repo.
 
-Running `bash build_corr` does the followings:
+Running `postbuild_modern.sh ` does the followings:
   - Installs an anaconda environment `lss` with all the dependencies listed in environment.yml (this will complain if you already have a conda env with the name `lss`)
   - Installs `CorrelationFunction` dependency in `lss` env from https://gitlab.com/shadaba/CorrelationFunction.git
 ---
