@@ -1,19 +1,9 @@
 #!/bin/bash
 set -euo pipefail
-#to remove the environment conda remove -n lss_v1 --all  
+
 # Function to check if a command exists
 command_exists() {
     command -v "$1" >/dev/null 2>&1
-}
-
-# Function to install a package if it's not already installed
-install_package() {
-    if ! conda list | grep -q "$1"; then
-        echo "Installing $1..."
-        conda install -y "$1"
-    else
-        echo "$1 is already installed."
-    fi
 }
 
 # Check if Conda is installed
@@ -23,12 +13,13 @@ if ! command_exists conda; then
 fi
 
 # Create and activate the environment
-ENV_NAME="lss"
-PYTHON_VERSION="3.8.8"
+ENV_NAME="lss_v6"
+#PYTHON_VERSION="3.8.8"
+PYTHON_VERSION="3.13.0"
 
 if ! conda env list | grep -q "$ENV_NAME"; then
     echo "Creating conda environment $ENV_NAME..."
-    conda create -n "$ENV_NAME" python=="$PYTHON_VERSION" -y
+    conda create -n "$ENV_NAME" python=="$PYTHON_VERSION" -y -c conda-forge
 else
     echo "Conda environment $ENV_NAME already exists."
 fi
@@ -37,7 +28,7 @@ echo "Activating conda environment $ENV_NAME..."
 eval "$(conda shell.bash hook)"
 conda activate "$ENV_NAME"
 
-# Install packages
+# Define the packages to install
 packages=(
     "boost"
     "cython"
@@ -55,12 +46,13 @@ packages=(
     "ipykernel"
 )
 
-for package in "${packages[@]}"; do
-    install_package "$package"
-done
-
-# Install fitsio from conda-forge
-install_package "conda-forge::fitsio"
+# Install all packages at once
+echo "Installing packages from conda-forge..."
+if ! conda install -y -c conda-forge "${packages[@]}"; then
+    echo "Error: Failed to install one or more packages. Please check the package names and try again."
+    echo "You can also try installing packages individually to identify which one is causing the issue."
+    exit 1
+fi
 
 # Install the IPython kernel
 python -m ipykernel install --user --name="$ENV_NAME" --display-name="$ENV_NAME"
